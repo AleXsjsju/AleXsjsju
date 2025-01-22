@@ -1,0 +1,66 @@
+local library = loadstring(game:HttpGet(('https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wall%20v3')))()
+local w = library:CreateWindow("Farm")
+local b = w:CreateFolder("CoinsFarm")
+
+b:Toggle("Farm All Coins",function(bool)
+    shared.Farm = bool
+    print(shared.Farm)
+end)
+
+function getRoot(char)
+	local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
+	return rootPart
+end
+
+
+function findAnyTouchInsertInPart(part)
+    for _, child in ipairs(part:GetChildren()) do
+        if child:IsA("TouchInterest") then
+            firetouchinterest(child, getRoot(game.Players.LocalPlayer.Character), 0)
+            task.wait(.4)
+            firetouchinterest(child, getRoot(game.Players.LocalPlayer.Character), 1)
+        end
+    end
+end
+
+function findAnyClickDetectorInPart(part)
+    --if not part or not part:IsA("BasePart") then
+    --    warn("Argument Invalid, Not Found")
+    --    return
+    --end
+
+    for _, child in ipairs(part:GetChildren()) do
+        if child:IsA("ClickDetector") then
+            fireclickdetector(child, 0, "MouseClick") 
+        end
+    end
+end
+
+while true do
+    wait(0.2)
+    if shared.Farm == true then
+        for i,v in pairs(workspace:GetDescendants()) do
+            if not workspace:FindFirstChild("TNTRun") then
+                if v.Name == "Coin" or v.Name == "Coins" and v:IsA("BasePart")then
+                    v.CFrame = getRoot(game.Players.LocalPlayer.Character).CFrame
+                end
+                if v.Name == "ThingButton" and v:IsA("ProximityPrompt") then
+                    fireproximityprompt(v)
+                    --v.Parent.CFrame = getRoot(game.Players.LocalPlayer.Character).CFrame
+                end
+                if v.Name == "Rock" then
+                    findAnyClickDetectorInPart(v)
+                end
+                if v.Name == "Clicker" then
+                    findAnyClickDetectorInPart(v)
+                end
+                if v.Name == "Objects" then
+                    findAnyClickDetectorInPart(v)
+                end
+                if v.Name == "SillyGreenBall" then
+                    findAnyTouchInsertInPart(v)
+                end
+            end
+        end
+	end
+end
