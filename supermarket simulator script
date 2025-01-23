@@ -1,0 +1,6 @@
+local args = {
+	[1] = "ChangeGold",
+	[2] = 16000000000000,
+	[3] = false
+}
+game:GetService("ReplicatedStorage"):WaitForChild("Events"):WaitForChild("Gold"):WaitForChild("ChangeGoldRF"):InvokeServer(unpack(args))
