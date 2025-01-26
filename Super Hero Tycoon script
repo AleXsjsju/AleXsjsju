@@ -1,0 +1,54 @@
+local function invokeGiver(giver, value)
+    local args = {value, "Power", giver}
+    game:GetService("ReplicatedStorage").SharedPackages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RF/HandleTycoonGiverPlayerRequest"):InvokeServer(unpack(args))
+end
+
+for value = 1, 10 do
+    for i = 1, 7 do
+        invokeGiver("Giver" .. i, value)
+    end
+    local args = {0, "Power", "Giver2"}
+    game:GetService("ReplicatedStorage").SharedPackages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RF/HandleTycoonGiverPlayerRequest"):InvokeServer(unpack(args))
+end
+
+local args = {
+    [1] = 1,
+    [2] = "Power",
+    [3] = "Giver_RainbowPeriastron"
+}
+game:GetService("ReplicatedStorage").SharedPackages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RF/HandleTycoonGiverPlayerRequest"):InvokeServer(unpack(args))
+
+local args = {
+    [1] = 1,
+    [2] = "Power",
+    [3] = "Giver_StenGun"
+}
+game:GetService("ReplicatedStorage").SharedPackages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RF/HandleTycoonGiverPlayerRequest"):InvokeServer(unpack(args))
+
+local args = {
+    [1] = 1,
+    [2] = "Power",
+    [3] = "GiverIsland1"
+}
+game:GetService("ReplicatedStorage").SharedPackages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RF/HandleTycoonGiverPlayerRequest"):InvokeServer(unpack(args))
+
+local args = {
+    [1] = 1,
+    [2] = "Power",
+    [3] = "GiverIsland2"
+}
+game:GetService("ReplicatedStorage").SharedPackages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RF/HandleTycoonGiverPlayerRequest"):InvokeServer(unpack(args))
+
+local args = {
+    [1] = 1,
+    [2] = "Power",
+    [3] = "GiverIsland3"
+}
+game:GetService("ReplicatedStorage").SharedPackages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RF/HandleTycoonGiverPlayerRequest"):InvokeServer(unpack(args))
+
+local args = {
+    [1] = 1,
+    [2] = "Power",
+    [3] = "GiverIsland4"
+}
+game:GetService("ReplicatedStorage").SharedPackages._Index:FindFirstChild("sleitnick_net@0.1.0").net:FindFirstChild("RF/HandleTycoonGiverPlayerRequest"):InvokeServer(unpack(args))
