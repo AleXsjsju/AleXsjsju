@@ -1,0 +1,29 @@
+local args1 = {
+    [1] = "Hawker",
+    [2] = -150000000,
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BuyPlaneEvent"):FireServer(unpack(args1))
+
+local args2 = {
+    [1] = "F4u",
+    [2] = -2000000,
+    [3] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BuyPlaneEvent"):FireServer(unpack(args2))local args1 = {
+    [1] = "Hawker",
+    [2] = -150000000,
+    [3] = false
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BuyPlaneEvent"):FireServer(unpack(args1))
+
+local args2 = {
+    [1] = "F4u",
+    [2] = -2000000,
+    [3] = true
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("BuyPlaneEvent"):FireServer(unpack(args2))
